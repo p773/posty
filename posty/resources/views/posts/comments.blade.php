@@ -13,7 +13,7 @@
                         @error('body')
                             <div class="text-red-500 mt-2 text-sm">
                                 {{ $message }}
-                            </div>
+                                git remote rm upstream  </div>
                         @enderror
                     </div>
 
@@ -87,7 +87,7 @@
                 @if ($comments->count())
                         <div class="mb-4 p-6"> 
 
-                            <a href="{{ route('users.posts', $comment->user) }}" class="font-bold"> {{ $comment->user->name }} </a>
+                            <a href="{{ route('users.posts', $comment->user) }}" class="font-bold"><i class="fas fa-caret-right"></i> {{ $comment->user->name }} </a>
                             <span class="text-grey-600 text-sm">{{ $comment->created_at->diffForHumans() }}</span>
                             <p class="mb-2"> {{ $comment->body}} </p>
 
