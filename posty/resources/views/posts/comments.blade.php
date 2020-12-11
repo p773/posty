@@ -13,7 +13,7 @@
                         @error('body')
                             <div class="text-red-500 mt-2 text-sm">
                                 {{ $message }}
-                                git remote rm upstream  </div>
+                                </div>
                         @enderror
                     </div>
 

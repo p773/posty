@@ -7,6 +7,30 @@
                 <form action="{{ route('posts') }}" method="post" class="mb-4">
                     @csrf
                     <div class="mb-4">
+
+                        
+                            
+                            <input type="text" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('body') border-red-500 @enderror" placeholder="Title" name="title"> <br>
+                            <!-- <input type="text" class='form-control' name="slug"> <br> -->
+                            <br>
+                            
+                            <select id="category" class="bg-gray-100 border-2 text-gray-500 w-full px-4 py-2 rounded-lg font-medium" name="category"> 
+                                
+                                <option value="Szukam osoby">Szukam osoby</option>
+                                <option value="Pozdrawiam">Pozdrawiam</option>
+                                <option value="Nie pozdrawiam">Nie pozdrawiam</option>
+                                <option value="Zagubiono">Zagubiono</option>
+                                <option value="Sprzedam">Sprzedam</option>
+                                
+                                <!--
+                                foreach ($categories as $cat) 
+                                <option value=" </option>
+                                endforeach 
+                                -->
+                            </select> 
+                            <br><br>
+
+
                         <label for="body" class="sr-only">Body</label>
                         <textarea name="body" id="body" cols="30" rows="4" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('body') border-red-500 @enderror" placeholder="Post something!"></textarea>
 
@@ -23,12 +47,14 @@
                 </form>
             @endauth
 
-            
+            <!-- TU WYŚWIETLAMY POSTY -->
+
+
             @if ($posts->count())
             @foreach ($posts as $post)      
                         <div class="mb-4"> 
 
-                            <a href="{{ route('users.posts', $post->user) }}" class="font-bold"> {{ $post->user->name }} </a>
+                            <a href="{{ route('users.posts', $post->user) }}" class="font-bold">{{ $post->category }} <i class="fas fa-caret-right"></i> {{ $post->title }} <i class="fas fa-caret-right"></i> {{ $post->user->name }} </a>
                             <span class="text-grey-600 text-sm">{{ $post->created_at->diffForHumans() }}</span>
                             <p class="mb-2"> {{ $post->body}} </p>
 

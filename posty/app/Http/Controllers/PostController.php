@@ -22,6 +22,9 @@ class PostController extends Controller
         ]);
     }
 
+    
+
+
     public function show(Post $post)
     {
         return view('posts.show', [
@@ -32,10 +35,19 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'body' => 'required'
+            'body' => 'required',
+            'category' => 'required',
+            'title' => 'required'
         ]);
 
-        $request->user()->posts()->create($request->only('body'));
+        //$request->user()->posts()->create($request->with('body','category','title'));
+                                                //->only('body'));
+
+        $request->user()->posts()->create([
+        'body' => request('body'),
+        'category' => request('category'),
+        'title' => request('title'),
+                                        ]);
 
         return back();
     }

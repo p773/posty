@@ -35,6 +35,11 @@ Route::get('/home', function () {
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/dashboard/oldest', [DashboardController::class, 'oldest'])->name('dashboard.oldest');
+Route::get('/dashboard/popular', [DashboardController::class, 'popular'])->name('dashboard.popular');
+Route::get('/dashboard/commented', [DashboardController::class, 'commented'])->name('dashboard.commented');
+Route::post('/dashboard', [DashboardController::class, 'showcat'])->name('dashboard');
+//Route::get('/dashboard/{category}', [DashboardController::class, 'showcatt'])->name('dashboard');
 
 //Route::get('/users/{user:username}/posts', [UserPostController::class, 'index'])->name('users.posts');
 Route::get('/users/{user:username}/posts', [UserPostController::class, 'index'])->name('users.posts');
