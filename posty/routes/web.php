@@ -28,9 +28,9 @@ Route::post('/', function () {
     return view('home');
 });
 
-Route::get('/home', function () {
-    return view('home');
-})->name('home');
+//Route::get('/home', function () { return view('home'); })->name('home');
+
+Route::get('/home', [DashboardController::class, 'home'])->name('home');
 
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 

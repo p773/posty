@@ -100,7 +100,15 @@ class DashboardController extends Controller
                 ]);
             }
 
+            public function home()
+                {
+                    $user = auth()->user()->id;
 
+                    return view('home', [
+                        'user'=>auth()->user()->id,
+                    ]);
+                    //return view('dashboard');
+                }
 
 
 
