@@ -26,7 +26,10 @@
 
             <ul class="flex items-center">
                 @auth
-                    <li>
+                    <li> 
+                        <a href="" class="p-3"><i class="far fa-envelope"></i></a>
+                    </li>
+                    <li> 
                         <a href="{{ route('users.posts',  auth()->user()  ) }}" class="p-3">{{ auth()->user()->name }}</a>
                     </li>
                     <li>
