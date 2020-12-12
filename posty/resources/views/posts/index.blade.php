@@ -54,7 +54,7 @@
             @foreach ($posts as $post)      
                         <div class="mb-4"> 
 
-                            <a href="{{ route('users.posts',  auth()->user()  ) }}" class="font-bold">{{ $post->category }} <i class="fas fa-caret-right"></i> {{ $post->title }} <i class="fas fa-caret-right"></i> {{ $post->user->name }} </a>
+                            <a href="{{ route('users.posts', $post->user) }}" class="font-bold">{{ $post->category }} <i class="fas fa-caret-right"></i> {{ $post->title }} <i class="fas fa-caret-right"></i> {{ $post->user->name }} </a>
                             <span class="text-grey-600 text-sm">{{ $post->created_at->diffForHumans() }}</span>
                             <p class="mb-2"> {{ $post->body}} </p>
 
