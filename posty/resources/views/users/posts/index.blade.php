@@ -5,11 +5,39 @@
 
 <div class="flex justify-center">
   <div class="w-8/12">
-  
-    <div class="p-6">
-      <h1 class="text-2xl font-medium mb-1">{{ $user->name }}</h1>
-      <p> Liczba postów: {{ $posts->count() }}. Liczba polubień: {{ $user->receivedLikes->count() }}. W serwisie od {{ $user->created_at->format('Y-m-d') }}.</p>
-    </div>
+    
+        <div class="flex">
+                
+                <div class="p-6 w-full">
+                  <h1 class="text-2xl font-medium mb-1">{{ $user->name }}</h1>
+                  <p> Liczba postów: {{ $posts->count() }}. </p>
+                    <p> Liczba polubień: {{ $user->receivedLikes->count() }}. </p> 
+                  <p>  W serwisie od {{ $user->created_at->format('Y-m-d') }}.</p>
+                </div>
+
+                  <div class="w-full p-6 justify-items-end">
+                    @auth
+                    <form action="{{ route('messages') }}" method="post" class="mb-4">
+                        @csrf
+                        <div class="mb-1">
+                            <label for="body" class="sr-only">Body</label>
+                            <textarea name="body" id="body" cols="30" rows="4" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('body') border-red-500 @enderror" placeholder="Napisz wiadomość do użytkownika {{ $user->name }}!"></textarea>
+
+                            @error('body')
+                                <div class="text-red-500 mt-2 text-sm">
+                                    {{ $message }}
+                                    </div>
+                            @enderror
+                        </div>
+                        <input  name="user" type="hidden" value="{{$user->id}}">
+                        <div>
+                            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded font-medium ">Wyślij</button>
+                        </div>
+                    </form>
+                @endauth
+                  </div>
+        </div>
+
 
       <div class="bg-white p-6 rounded-lg">
         @if ($posts->count())

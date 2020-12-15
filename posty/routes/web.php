@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PostLikeController;
 use App\Http\Controllers\UserPostController;
+use App\Http\Controllers\MessageController;
 /*
 
 |--------------------------------------------------------------------------
@@ -71,3 +72,8 @@ Route::get('/comments/{post}', [PostController::class, 'comment'])->name('commen
 Route::post('/posts/{post}/likes', [PostLikeController::class, 'store'])->name('posts.likes');
 
 Route::delete('/posts/{post}/likes', [PostLikeController::class, 'destroy'])->name('posts.likes');
+
+
+Route::post('/users/messages', [MessageController::class, 'store'])->name('messages');
+
+Route::get('/users/messages', [MessageController::class, 'index'])->name('messages');
