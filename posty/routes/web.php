@@ -77,3 +77,5 @@ Route::delete('/posts/{post}/likes', [PostLikeController::class, 'destroy'])->na
 Route::post('/users/messages', [MessageController::class, 'store'])->name('messages');
 
 Route::get('/users/messages', [MessageController::class, 'index'])->name('messages');
+
+Route::get('/users/chat/{receiver}', [MessageController::class, 'chat'])->name('chat');

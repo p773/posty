@@ -19,6 +19,7 @@ class CreateMessagesTable extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->text('receiver_id');
             $table->text('body');
+            $table->text('receiver_name');
 
         });
     }

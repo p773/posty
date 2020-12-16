@@ -30,6 +30,7 @@
                             @enderror
                         </div>
                         <input  name="user" type="hidden" value="{{$user->id}}">
+                        <input  name="receiver_name" type="hidden" value="{{$user->name}}">
                         <div>
                             <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded font-medium ">Wyślij</button>
                         </div>
