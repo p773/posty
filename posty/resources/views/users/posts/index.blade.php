@@ -9,7 +9,7 @@
         <div class="flex">
                 
                 <div class="p-6 w-full">
-                  <h1 class="text-2xl font-medium mb-1">{{ $user->name }}</h1>
+                  <h1 class="text-2xl font-medium mb-1"><i class="fas fa-user"></i> {{ $user->name }}</h1>
                   <p> Liczba postów: {{ $posts->count() }}. </p>
                     <p> Liczba polubień: {{ $user->receivedLikes->count() }}. </p> 
                   <p>  W serwisie od {{ $user->created_at->format('Y-m-d') }}.</p>

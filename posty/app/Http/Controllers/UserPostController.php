@@ -16,4 +16,18 @@ class UserPostController extends Controller
             'user' => $user,
             'posts' =>  $posts ]);
     }
+
+    public function all()
+    {
+        $users =User::all();
+        //$posts = $user->posts()->latest()->with(['user','likes'])->paginate(20);
+        //$posts = $user->posts()->latest()->with(['user','likes'])->paginate(20);
+        //dd($user);
+        // $posts = Post::latest()->with(['user', 'likes'])->paginate(4); //
+        return view ('users.users',[
+            'users' => $users,
+          //  'posts' =>  $posts 
+            ]);
+    }
+
 }

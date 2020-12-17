@@ -22,6 +22,11 @@
                 <li>
                     <a href="{{ route('posts') }}" class="p-3">Posts</a>
                 </li>
+
+                <li>
+                    <a href="{{ route('users.all') }}" class="p-3">Users</a>
+                </li>
+
             </ul>
 
             <ul class="flex items-center">

@@ -79,3 +79,5 @@ Route::post('/users/messages', [MessageController::class, 'store'])->name('messa
 Route::get('/users/messages', [MessageController::class, 'index'])->name('messages');
 
 Route::get('/users/chat/{receiver}', [MessageController::class, 'chat'])->name('chat');
+
+Route::get('/users/all', [UserPostController::class, 'all'])->name('users.all');
