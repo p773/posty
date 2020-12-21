@@ -71,7 +71,7 @@ class MessageController extends Controller
                
                 
                 $users = User::all();
-                
+                $receiverr= User::where('id', $receiver)->first();
                 
                 //$plucked = $messages->pluck('user_id', 'receiver_id');
 
@@ -82,11 +82,13 @@ class MessageController extends Controller
 
                 //dd($concatenated);
 
-                //dd($);
+                //dd($receiverr);
                 return view('users.chat', [
                     'messages' => $messages,
                     'user' => $user,
-                    'users' => $users
+                    'users' => $users,
+                    'receiverr' => $receiverr
+
                 ]);
             }
 

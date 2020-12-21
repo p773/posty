@@ -81,3 +81,7 @@ Route::get('/users/messages', [MessageController::class, 'index'])->name('messag
 Route::get('/users/chat/{receiver}', [MessageController::class, 'chat'])->name('chat');
 
 Route::get('/users/all', [UserPostController::class, 'all'])->name('users.all');
+
+Route::get('/users/all_AZ', [UserPostController::class, 'all_AZ'])->name('users.all_AZ');
+
+Route::get('/users/latest', [UserPostController::class, 'latest'])->name('users.latest');

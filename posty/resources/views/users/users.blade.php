@@ -14,11 +14,11 @@
                  
                 <a href="" ><button  class="bg-blue-500 text-white px-4 py-2 rounded font-medium justify-center mr-1">   Najpopularniejsi  </button>
                         
-                <a href="" ><button  class="bg-blue-500 text-white px-4 py-2 rounded font-medium justify-center mr-1">   Od A do Z  </button>
+                <a href="{{ route('users.all_AZ') }}" ><button  class="bg-blue-500 text-white px-4 py-2 rounded font-medium justify-center mr-1">   Od A do Z  </button>
                 
-                <a href="" ><button  class="bg-blue-500 text-white px-4 py-2 rounded font-medium justify-center mr-1">   Najnowsi </button> </a>
+                <a href="{{ route('users.latest') }}" ><button  class="bg-blue-500 text-white px-4 py-2 rounded font-medium justify-center mr-1">   Najnowsi </button> </a>
                 
-                <a href="" > <button class="bg-blue-500 text-white px-4 py-2 rounded font-medium justify-center mr-1">   Najstarsi </button> </a>
+                <a href="{{ route('users.all') }}" > <button class="bg-blue-500 text-white px-4 py-2 rounded font-medium justify-center mr-1">   Najstarsi </button> </a>
                 </div>
           <br>
               <!-- TU WYŚWIETLAMY USERÓW -->
