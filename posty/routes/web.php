@@ -44,7 +44,7 @@ Route::post('/dashboard', [DashboardController::class, 'showcat'])->name('dashbo
 
 //Route::get('/users/{user:username}/posts', [UserPostController::class, 'index'])->name('users.posts');
 Route::get('/users/{user:username}/posts', [UserPostController::class, 'index'])->name('users.posts');
-
+Route::get('/users/{user:username}/posts2', [UserPostController::class, 'index2'])->name('users.post2');
 
 
 

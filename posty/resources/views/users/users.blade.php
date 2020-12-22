@@ -28,7 +28,7 @@
               @if ($users->count())
                       <div class="mb-1 p-1"> 
                        
-                          <p class="mb-1"><i class="fas fa-user"></i> {{ $user->name}} w serwise od {{ $user->created_at->format('Y-m-d') }}. </p>
+                          <p class="mb-1"><i class="fas fa-user"></i><a href="{{route ('users.post2', $user->id  )}}" class="font-bold w-max"> {{ $user->name }} </a> w serwise od {{ $user->created_at->format('Y-m-d') }}. </p>
 
                         
                          <hr>  
