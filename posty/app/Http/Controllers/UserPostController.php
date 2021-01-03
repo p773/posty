@@ -70,4 +70,20 @@ class UserPostController extends Controller
             ]);
     }
 
+    public function popular()
+    {
+       
+        //$posts = Post::withCount('likes')->with(['user', 'likes'])->paginate(4)->get();
+        $users = User::with(['posts', 'likes'])->withCount('receivedLikes')->orderByDesc('likes_count')->get()->paginate(4);
+        
+        //$user->posts()->latest()->with(['user','likes'])-
+        // $posts = Post::latest()->with(['user', 'likes'])->paginate(20);
+       //$sorted = $posts->sortBy('likes')->paginate(4);
+       //dd($users);
+       return view ('users.users',[
+        'users' => $users,
+      //  'posts' =>  $posts 
+        ]);
+    }
+
 }

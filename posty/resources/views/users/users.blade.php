@@ -12,7 +12,7 @@
                 
                     
                  
-                <a href="" ><button  class="bg-blue-500 text-white px-4 py-2 rounded font-medium justify-center mr-1">   Najpopularniejsi  </button>
+                <a href="{{ route('users.popular') }}" ><button  class="bg-blue-500 text-white px-4 py-2 rounded font-medium justify-center mr-1">   Najpopularniejsi  </button>
                         
                 <a href="{{ route('users.all_AZ') }}" ><button  class="bg-blue-500 text-white px-4 py-2 rounded font-medium justify-center mr-1">   Od A do Z  </button>
                 
@@ -28,7 +28,7 @@
               @if ($users->count())
                       <div class="mb-1 p-1"> 
                        
-                          <p class="mb-1"><i class="fas fa-user"></i><a href="{{route ('users.post2', $user->id  )}}" class="font-bold w-max"> {{ $user->name }} </a> w serwise od {{ $user->created_at->format('Y-m-d') }}. </p>
+                          <p class="mb-1"><i class="fas fa-user"></i><a href="{{route ('users.post2', $user->id  )}}" class="font-bold w-max"> {{ $user->name }} </a> w serwise od {{ $user->created_at->format('Y-m-d') }}. Posty: {{ $user->posts->count() }}. <i class="fas fa-heart"></i> {{ $user->receivedLikes->count() }}</p>
 
                         
                          <hr>  

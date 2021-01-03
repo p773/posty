@@ -85,3 +85,5 @@ Route::get('/users/all', [UserPostController::class, 'all'])->name('users.all');
 Route::get('/users/all_AZ', [UserPostController::class, 'all_AZ'])->name('users.all_AZ');
 
 Route::get('/users/latest', [UserPostController::class, 'latest'])->name('users.latest');
+
+Route::get('/users/popular', [UserPostController::class, 'popular'])->name('users.popular');
